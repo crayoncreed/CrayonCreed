@@ -22,6 +22,17 @@ body{
     background: $body;
 }
 
+body::-webkit-scrollbar {
+    width: 5px;
+}
+body::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 6px hsl(240, 15%, 30%);
+}
+body::-webkit-scrollbar-thumb {
+    background-color: hsl(175, 97%, 40%);
+    // outline: 1px solid slategrey;
+    border-radius: 6px;
+}
 
 header{
     width: 100%;
@@ -58,12 +69,23 @@ header{
             top: 0;
             right: 0;
             left: 0;
-            z-index: 1030;            
-            // .navbar-brand{
-            // }
+            z-index: 1030; 
+            @include xsm{
+                padding: 3% 2.5%;
+                top: 0;
+            }
+            @include sm{
+                padding: 3% 2.5%;
+                top: 0;
+            }
+            @include md{
+                padding: 3% 2.5%;
+                top: 0;
+            }
         }
         .navbar-toggler{
             outline: none;
+            color: $txt_white;
         }
         .navbar-brand{
             padding: 0;
@@ -128,6 +150,7 @@ header{
                 transition: all 400ms ease;
                 display: flex;
                 align-items: center;
+                margin: 2px 0px;
                 &:hover{
                     border-color: transparent;
                     text-decoration: none;
@@ -150,6 +173,11 @@ header{
     justify-content: center;
     align-items: center;
     perspective: 1000px;
+    overflow-x: hidden;
+    @include xsm{
+        height: auto;
+        overflow: hidden;
+    }
     &::before{
         content: "";
         position: absolute;
@@ -184,6 +212,10 @@ header{
             line-height: 1;
             transform-style: preserve-3d;
             animation: deeep-in 400ms 200ms cubic-bezier(0.87, 0.7, 0.9, 0.9) backwards;
+            @include xsm{
+                font-size: 50px;
+                margin-top: 20%;
+            }
             .home-title-ltr{
                 color: $text_main;
                 // text-shadow: 0px 7px 0px #04fbe8b5;
@@ -206,6 +238,12 @@ header{
                     border: 4px outset #04fbe8b5;
                     // transform-origin: center;
                     animation: rotate 5s linear infinite;
+                    @include xsm{
+                        width: 90px;
+                        height: 90px;
+                        top: -44%;
+                        left: -55%;
+                    }
                 }
             }
         }
@@ -219,6 +257,9 @@ header{
             margin-bottom: 30px;
             transform-style: preserve-3d;
             animation: opacity 900ms 800ms linear backwards;
+            @include xsm{
+                font-size: 25px;
+            }
             span{
                 color: $text_main;
             }
@@ -232,6 +273,9 @@ header{
             line-height: 1.7;
             transform-style: preserve-3d;
             animation: opacity 900ms 1.3s linear backwards;
+            @include xsm{
+                font-size: 12px;
+            }
         }
         .home-list{
             list-style: none;
@@ -246,6 +290,9 @@ header{
                     color: $txt_yellow;
                     font-size: 14px;
                     text-transform: uppercase;
+                    @include xsm{
+                        font-size: 12px;
+                    }
                 }
             }
         }
@@ -352,7 +399,7 @@ header{
         transition: transform 0.6s;
         transform-style: preserve-3d;
         // background-color: #272A33;
-        padding: 7% 5%;
+        padding: 7% 1%;
         .explore-title{
             font-family: OpenSans-Bold;
             font-size: 18px;
@@ -442,6 +489,9 @@ footer{
         display: flex;
         align-items: center;
         justify-content: flex-end;
+        @include xsm{
+            justify-content: flex-start;
+        }
         li{
             margin-right: 15px;
             &:nth-last-child(1){
@@ -459,6 +509,10 @@ footer{
             justify-content: center;
             align-items: center;
             box-shadow: 0px 2px 8px rgba(59, 59, 59, 0.12);
+            @include xsm{
+                width: 34px;
+                height: 34px;
+            }
         }
         .social-links{
             color: $txt_grey;
