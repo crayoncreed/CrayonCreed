@@ -51,6 +51,8 @@
 
 html {
   scroll-behavior: smooth;
+  background: -webkit-gradient(linear, left top, left bottom, from(#16161E), to(#192A3E));
+  background: linear-gradient(to bottom, #16161E, #192A3E);
 }
 
 * {
@@ -657,64 +659,8 @@ footer {
   padding: 2% 0% 4% 0%;
 }
 
-footer .footer-heading {
-  color: #FCCF23;
-  padding: 12px 0px;
-  font-family: OpenSans-Bold;
-  font-weight: 100;
-  font-size: 14px;
-}
-
 footer hr {
   border-top-color: #D8DEFA;
-}
-
-footer .footer-list {
-  position: relative;
-  width: 100%;
-}
-
-footer .footer-list .footer-li {
-  padding: 0px 0px;
-  margin: 0;
-}
-
-footer .footer-list .footer-li .footer-link {
-  color: #FCCF23;
-  font-size: 14px;
-  font-family: OpenSans-Regular;
-  -webkit-transition: all 300ms ease;
-  transition: all 300ms ease;
-}
-
-footer .footer-list .footer-li .footer-link:hover {
-  color: #00a2ff;
-  text-decoration: none;
-}
-
-footer .footer-list .footer-addr {
-  padding: 10px 0px 0px 0px;
-  margin: 0;
-}
-
-footer .footer-list .footer-addr .addr-iocn {
-  color: white;
-  padding: 0px 10px;
-}
-
-@media (max-width: 575.98px) {
-  footer .footer-list .footer-addr .addr-iocn {
-    padding: 0px 4px;
-  }
-}
-
-footer .footer-list .footer-addr .addr-details {
-  padding: 0;
-  margin: 0;
-  font-family: OpenSans-Regular;
-  font-weight: normal;
-  font-size: 12px;
-  color: white;
 }
 
 footer .copyright {
