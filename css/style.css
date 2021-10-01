@@ -307,6 +307,8 @@ header .menu-right .menu-right-item .menu-right-link:hover {
 }
 
 .home .home-content {
+  position: relative;
+  width: 100%;
   padding: 3% 3%;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -329,6 +331,12 @@ header .menu-right .menu-right-item .menu-right-link:hover {
           perspective: 500px;
 }
 
+@media (max-width: 575.98px) {
+  .home .home-content {
+    top: 0;
+  }
+}
+
 .home .home-content .home-title {
   font-size: 90px;
   font-family: axiforma-Heavy;
@@ -346,8 +354,8 @@ header .menu-right .menu-right-item .menu-right-link:hover {
 
 @media (max-width: 575.98px) {
   .home .home-content .home-title {
-    font-size: 50px;
-    margin-top: 20%;
+    font-size: 40px;
+    margin-top: 40%;
   }
 }
 
@@ -377,8 +385,8 @@ header .menu-right .menu-right-item .menu-right-link:hover {
 
 @media (max-width: 575.98px) {
   .home .home-content .home-title .home-title-ltr::before {
-    width: 90px;
-    height: 90px;
+    width: 70px;
+    height: 70px;
     top: -44%;
     left: -55%;
   }
@@ -431,12 +439,15 @@ header .menu-right .menu-right-item .menu-right-link:hover {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
   -webkit-animation: opacity 900ms 1.9s linear backwards;
           animation: opacity 900ms 1.9s linear backwards;
 }
 
 .home .home-content .home-list .home-list-item {
   margin-right: 20px;
+  margin-bottom: 2px;
 }
 
 .home .home-content .home-list .home-list-item:nth-last-child(1) {
@@ -466,6 +477,13 @@ header .menu-right .menu-right-item .menu-right-link:hover {
           transform: translate(-360%, 400%) skew(-20deg) rotate(-25deg);
   -webkit-animation: diagonal 6s linear infinite forwards;
           animation: diagonal 6s linear infinite forwards;
+}
+
+@media (max-width: 575.98px) {
+  .line {
+    -webkit-animation: none;
+            animation: none;
+  }
 }
 
 @-webkit-keyframes open {
