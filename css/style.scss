@@ -85,6 +85,9 @@ header{
                 padding: 3% 2.5%;
                 top: 0;
             }
+            .navbar-brand .logo{
+                width: 50px;
+            }
         }
         .navbar-toggler{
             outline: none;
@@ -93,6 +96,10 @@ header{
         .navbar-brand{
             padding: 0;
             font-size: initial;
+            .logo{
+                width: 120px;
+                height: auto;
+            }
             .logo-media{
                 display: flex;
                 align-items: center;
@@ -116,13 +123,13 @@ header{
             position: relative;
             .nav-item{
                 position: relative;
-                &:hover{
-                    > .navmenu{
-                        > .navmenu-item{
-                            display: block;
-                        }
-                    }
-                }
+                // &:hover{
+                //     > .navmenu{
+                //         > .navmenu-item{
+                //             display: block;
+                //         }
+                //     }
+                // }
                 .nav-link{
                     padding: 0.5rem 1.5rem;
                     color: $txt_white; 
@@ -136,6 +143,7 @@ header{
                     }             
                 }
                 .navmenu{
+                    background-color: transparent;
                     position: absolute;
                     top: 100%;
                     left: 0;
@@ -145,7 +153,7 @@ header{
                     list-style: none;
                     perspective: 1000px;
                     .navmenu-item{
-                        display: none;
+                        // display: none;
                         opacity: 0;
                         @for $i from 1 through 6 {
                             &:nth-child(#{$i}) {
@@ -165,8 +173,8 @@ header{
                             transition: all 400ms cubic-bezier(0.29, 0.9, 0.26, 1.21);
                             &:hover{
                                 transform: scale(1.04);
-                                box-shadow: 4px 4px 10px hsla(240, 14%, 10%, 0.282),
-                                    -4px -4px 10px hsla(240, 14%, 10%, 0.514);
+                                // box-shadow: 4px 4px 10px hsla(240, 14%, 10%, 0.282),
+                                //     -4px -4px 10px hsla(240, 14%, 10%, 0.514);
                             }
                         }
                     }

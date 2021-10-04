@@ -10,7 +10,10 @@
     height: 100vh;
     position: relative;
     // background: linear-gradient(to bottom, #180C79, #8723FD);
-    background-image: url('../images/bg4.jpg');
+    // background: linear-gradient(to bottom, #16161E, #192A3E);
+    // background-color: $bg_blue;
+    // background-image: url('../images/bg5.jpg');
+    background: linear-gradient(0deg, rgba(41, 35, 77, 0.61)), url('../images/bg5.jpg');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -39,6 +42,29 @@
         .srv-main-left{
             width: 100%;
             padding: 20px 10px;
+            position: relative;
+            padding: 5%;
+            z-index: 99;
+            // -webkit-box-reflect: below -80% linear-gradient(to bottom, rgba(0, 0, 0, 0.199) 0%, rgba(202, 202, 202, 0.329) 10%);
+            &::before{
+                content: "";
+                position: absolute;
+                left: 0;
+                top: 0;
+                right: 0;
+                bottom: 0;
+                border-radius: 0px 8px 8px 0px;
+                // background:black;
+                // background:rgba(0, 0, 0, 0.164);
+                background: rgba(255, 255, 255, 0.089); 
+            
+                backdrop-filter:blur(4px);
+                -o-backdrop-filter:blur(4px);
+                -ms-backdrop-filter:blur(4px);
+                -moz-backdrop-filter:blur(4px);
+                -webkit-backdrop-filter:blur(4px);
+                z-index: -1;
+            }
             .srv-main-badge{
                 box-sizing: border-box;
                 width: 160px;
@@ -172,7 +198,7 @@
     margin-bottom: 16px;
     &-label{
         display: block;
-        color: rgb(160, 160, 160);
+        color: rgb(218, 218, 218);
         font-size: 12px;
         margin-bottom: 0px;
     }
@@ -190,7 +216,7 @@
             border-bottom-color: $bg_yellow2;
         }
         &::placeholder{
-            color: rgba(87, 87, 87, 0.986);
+            color: rgba(124, 124, 124, 0.986);
         }
     }
 }
