@@ -192,8 +192,8 @@
 }
 
 .srv-main .srv-container .srv-frm .wave path {
-  -webkit-animation: wave 6s linear infinite alternate;
-          animation: wave 6s linear infinite alternate;
+  -webkit-animation: wave 15s linear infinite alternate;
+          animation: wave 15s linear infinite alternate;
 }
 
 @-webkit-keyframes wave {
