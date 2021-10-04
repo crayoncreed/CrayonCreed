@@ -573,7 +573,11 @@ header{
         // box-shadow: 9px 9px 20px hsla(240, 14%, 10%, 0.214),
         //     -9px -9px 20px hsla(240, 14%, 10%, 0.514);
         margin: 8px;
-        padding-top: 5px;
+        // padding-top: 5px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-decoration: none;
         font-size: 12px;
         position: relative;
         z-index: 222;
