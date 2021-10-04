@@ -18,10 +18,24 @@
     // background: hsl(216, 34%, 16%);
     display: flex;
     align-items: center; 
-    perspective: 1000px;   
+    perspective: 1000px;  
+    @include xsm{
+        height: auto;
+    } 
+    @include sm{
+        height: auto;
+    } 
     .srv-container{
         padding: 3% 10% 3% 0%;
         margin-top: 4%;
+        @include xsm{
+            padding: 3%;
+            margin-top: 20%;
+        }
+        @include sm{
+            padding: 3%;
+            margin-top: 20%;
+        }
         .srv-main-left{
             width: 100%;
             padding: 20px 10px;
@@ -109,6 +123,10 @@
                     border-radius: 10px;
                     box-shadow: 0px 4px 15px rgba(37, 37, 37, 0.212);
                     margin-right: 10px;
+                    @include xsm{
+                        width: 30px;
+                        margin-right: 5px;
+                    }
                 }
                 .srv-frm-dsg2{
                     flex: 1;                    
