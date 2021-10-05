@@ -2,7 +2,6 @@
 @import 'mixin';
 @import 'fonts';
 @import 'colors';
-// @import 'colors2';
 
 html {
     scroll-behavior: smooth;
@@ -20,7 +19,6 @@ body {
     padding: 0;
     overflow-x: hidden;
     width: 100%;
-    // font-family: Recoleta;
     font-family: axiforma-Light;
     background: linear-gradient(to bottom, #16161E, #192A3E);
 }
@@ -37,7 +35,6 @@ body::-webkit-scrollbar-track {
 
 body::-webkit-scrollbar-thumb {
     background-color: hsl(175, 97%, 40%);
-    // outline: 1px solid slategrey;
     border-radius: 6px;
 }
 
@@ -48,8 +45,6 @@ header {
     padding: 0;
     margin: 0;
     transition: all 300ms linear;
-
-    // background-color: #fff;
     .navbar {
         font-weight: 100;
         padding: 2% 11%;
@@ -61,97 +56,61 @@ header {
             padding: 3% 2.5%;
             top: 0;
         }
-
         @include sm {
             padding: 3% 2.5%;
             top: 0;
         }
-
         @include md {
             padding: 3% 2.5%;
             top: 0;
         }
-
         &.blackto {
-            // background: $body;
             background: #16161E;
             box-shadow: 0px 2px 10px rgba(12, 12, 12, 0.145);
             padding: 1% 11%;
-            // position: fixed;
             top: 0;
             right: 0;
             left: 0;
             z-index: 1030;
-
             @include xsm {
                 padding: 3% 2.5%;
                 top: 0;
             }
-
             @include sm {
                 padding: 3% 2.5%;
                 top: 0;
             }
-
             @include md {
                 padding: 3% 2.5%;
                 top: 0;
             }
-
             .navbar-brand .logo {
-                width: 40px;
+                width: 120px;
                 position: relative;
                 top: 0;
             }
         }
-
         .navbar-toggler {
             outline: none;
             color: $txt_white;
         }
-
         .navbar-brand {
             padding: 0;
             font-size: initial;
-
             .logo {
-                width: 120px;
+                width: 220px;
                 height: auto;
                 position: absolute;
-                top: 5%;
+                top: 9%;
                 @include xsm{
-                    width: 50px;
-                }
-            }
-
-            .logo-media {
-                display: flex;
-                align-items: center;
-
-                .logo-circle {
-                    background-color: $main;
-                    width: 30px;
-                    height: 30px;
-                    border-radius: 50%;
-                    margin-right: 7px;
-                }
-
-                .logo-name {
-                    margin: 0;
-                    font-size: 14px;
-                    color: $txt_white;
-                    font-family: axiforma-Heavy;
-                    letter-spacing: 4px;
+                    width: 140px;
                 }
             }
         }
-
         .custom-navbar-nav {
             position: relative;
-
             .nav-item {
                 position: relative;
-
                 // &:hover{
                 //     > .navmenu{
                 //         > .navmenu-item{
@@ -174,7 +133,6 @@ header {
                         padding: .5rem .5rem;
                     }
                 }
-
                 .navmenu {
                     background-color: transparent;
                     position: absolute;
@@ -185,17 +143,15 @@ header {
                     margin: 0;
                     list-style: none;
                     perspective: 1000px;
-
                     .navmenu-item {
                         // display: none;
                         opacity: 0;
 
                         @for $i from 1 through 6 {
                             &:nth-child(#{$i}) {
-                                animation: menu 350ms #{(150 * $i) - 300}ms ease-in-out forwards;
+                                animation: menu 350ms #{(100 * $i) - 200}ms ease-in-out forwards;
                             }
                         }
-
                         .navmenu-link {
                             background: $bg_blue;
                             padding: 0.5rem 1.5rem;
@@ -207,7 +163,6 @@ header {
                             min-width: 140px;
                             text-decoration: none;
                             transition: all 400ms cubic-bezier(0.29, 0.9, 0.26, 1.21);
-
                             &:hover {
                                 transform: scale(1.04);
                                 // box-shadow: 4px 4px 10px hsla(240, 14%, 10%, 0.282),
@@ -264,7 +219,6 @@ header {
         opacity: 0;
         transform: rotateY(-90deg) translateY(30px) skew(90deg) scale(1.1);
     }
-
     // 50%{
     //     // opacity: 0.4;
     //     transform: rotateY(0deg) translateY(0px) scale(1.13);
@@ -303,54 +257,20 @@ header {
     align-items: center;
     perspective: 1000px;
     padding-bottom: 3%;
-
-    // overflow-x: hidden;
     @include xsm {
         height: auto;
         overflow: hidden;
     }
-
-    // &::before {
-    //     content: "";
-    //     position: absolute;
-    //     left: 0;
-    //     top: 0;
-    //     width: 100%;
-    //     height: 0%;
-    //     background-color: hsl(175, 97%, 20%);
-    //     animation: open 400ms linear;
-    //     z-index: 999999;
-    // }
-    // &::before{
-    //     content: "";
-    //     position: absolute;
-    //     left: 0;
-    //     top: 0;
-    //     // bottom: 0;
-    //     // right: 0;
-    //     width: 40%;
-    //     height: 40%;
-    //     background: url('../images/Firmware.svg');
-    //     mix-blend-mode: screen;
-    //     background-repeat: no-repeat;
-    //     background-size: contain;
-    //     background-position: center;
-
-    // }
-
     .home-svg {
         position: absolute;
         bottom: 0;
         left: 0;
         z-index: 0;
-
         path {
             animation: home-path 15s linear infinite alternate;
         }
     }
-
     .home-content {
-        // background-color: #fff;
         position: relative;
         width: 100%;
         height: 100%;
@@ -358,101 +278,76 @@ header {
         display: flex;
         flex-direction: column;
         justify-content: center;
-        // align-items: center;
         perspective: 1000px;
         position: relative;
         top: 10%;
         perspective: 500px;
         z-index: 99;
-
         @include xsm {
             top: 0;
             text-align: center;
         }
-
         .home-title {
             font-size: 90px;
             font-family: axiforma-Heavy;
             letter-spacing: 20px;
             color: $txt_white;
-            // text-shadow: 0px 7px 0px #04fbe8b5;
             text-transform: uppercase;
-            // text-align: center;
             margin-bottom: 40px;
             line-height: 1;
             transform-style: preserve-3d;
-            animation: deeep-in 400ms 200ms cubic-bezier(0.87, 0.7, 0.9, 0.9) backwards;
-
             @include xsm {
                 font-size: 40px;
                 margin-top: 40%;
             }
-
-            .home-title-ltr {
-                color: $text_main;
-                // text-shadow: 0px 7px 0px #04fbe8b5;
-                // background-color: #fff;
-                display: inline-block;
-                position: relative;
-                transform-style: preserve-3d;
-
-                &::before {
-                    content: "";
-                    position: absolute;
-                    width: 120px;
-                    height: 120px;
-                    border-radius: 50%;
-                    // background-color: #fff;
-                    top: -23%;
-                    left: -39%;
-                    background-color: transparent;
-                    // transform: translate(-50%, -50%);
-                    box-shadow: 0px 0px 15px 1px #04fbe8b5;
-                    border: 4px outset #04fbe8b5;
-                    // transform-origin: center;
-                    animation: rotate 5s linear infinite;
-
-                    @include xsm {
-                        width: 70px;
-                        height: 70px;
-                        top: -44%;
-                        left: -55%;
-                    }
-                }
-            }
+            // .home-title-ltr {
+            //     color: $text_main;
+            //     display: inline-block;
+            //     position: relative;
+            //     transform-style: preserve-3d;
+            //     &::before {
+            //         content: "";
+            //         position: absolute;
+            //         width: 120px;
+            //         height: 120px;
+            //         border-radius: 50%;
+            //         top: -23%;
+            //         left: -39%;
+            //         background-color: transparent;
+            //         box-shadow: 0px 0px 15px 1px #04fbe8b5;
+            //         border: 4px outset #04fbe8b5;
+            //         // transform-origin: center;
+            //         animation: rotate 5s linear infinite;
+            //         @include xsm {
+            //             width: 70px;
+            //             height: 70px;
+            //             top: -44%;
+            //             left: -55%;
+            //         }
+            //     }
+            // }
         }
-
         .home-subtitle {
             font-size: 40px;
             color: $txt_white;
-            // text-align: center;
             font-family: OpenSans-Semibold;
-            // font-family: axiforma-Light;
-            // letter-spacing: 1px;
             margin-bottom: 15px;
-            transform-style: preserve-3d;
-            animation: opacity 900ms 800ms linear backwards;
-            
+            transform-style: preserve-3d;           
             @include xsm {
                 font-size: 25px;
                 margin-top: 40%;               
             }
-
             span {
                 color: $text_main;
             }
         }
-
         .home-info {
             color: $txt_grey;
-            // text-align: center;
             margin-bottom: 30px;
             font-size: 16px;
             font-family: OpenSans-Regular;
             line-height: 1.7;
             transform-style: preserve-3d;
-            animation: opacity 900ms 1.3s linear backwards;
-
             @include xsm {
                 font-size: 12px;
             }
@@ -462,16 +357,12 @@ header {
             list-style: none;
             display: flex;
             flex-wrap: wrap;
-            animation: opacity 900ms 1.9s linear backwards;
-
             .home-list-item {
                 margin-right: 20px;
                 margin-bottom: 2px;
-
                 &:nth-last-child(1) {
                     margin-right: 0;
                 }
-
                 .home-list-link {
                     color: $txt_yellow;
                     font-size: 14px;
@@ -491,12 +382,10 @@ header {
 }
 
 .home-services-box {
-    // background-color: $bg_blue;
     background: hsl(216, 34%, 16%);
     width: 220px;
     height: auto;
     padding: 10px;
-    // margin-bottom: 8%;
     margin-top: 6%;
     border-radius: 10px;
     box-shadow: 9px 9px 25px hsla(240, 14%, 10%, 0.282),
@@ -504,51 +393,40 @@ header {
     position: relative;
     overflow: hidden;
     transition: all 400ms cubic-bezier(0.29, 0.9, 0.26, 1);
-    animation: opacity 900ms 800ms linear backwards;
     z-index: 99;
-
     @include xsm {
         margin-top: 10%;
         width: 100%;
     }
-
     @include sm {
         margin-top: 10%;
         width: 100%;
     }
-
-
     &:hover {
         transform: scale(1.01);
         background: linear-gradient(to bottom, #1193B7 0%, #2181C9 100%);
-
         .service-svg path {
             transition: all 400ms 200ms cubic-bezier(0.29, 0.9, 0.26, 1.21);
             fill: $bg_blue;
             // d: path("M0,256L34.3,229.3C68.6,203,137,149,206,117.3C274.3,85,343,75,411,106.7C480,139,549,213,617,234.7C685.7,256,754,224,823,202.7C891.4,181,960,171,1029,186.7C1097.1,203,1166,245,1234,256C1302.9,267,1371,245,1406,234.7L1440,224L1440,320L1405.7,320C1371.4,320,1303,320,1234,320C1165.7,320,1097,320,1029,320C960,320,891,320,823,320C754.3,320,686,320,617,320C548.6,320,480,320,411,320C342.9,320,274,320,206,320C137.1,320,69,320,34,320L0,320Z")
             animation: path-anim 4s linear infinite alternate;
         }
-
         .services-header .services-top {
             width: 100%;
             border-radius: 30px;
             box-shadow: 4px 4px 10px hsla(240, 14%, 10%, 0.282),
                 -4px -4px 10px hsla(240, 14%, 10%, 0.514);
-
             i {
                 transform: rotate(180deg);
             }
         }
-
         .services-name,
         .services-title {
             color: $txt_white !important;
         }
-
         .services-subtitle {
             color: hsl(219, 28%, 88%);
         }
-
         .album {
             background-color: hsla(193, 83%, 39%, 0.616);
             border: 2px solid hsla(193, 83%, 39%, 0.616);
@@ -556,14 +434,12 @@ header {
                 -9px -9px 20px hsla(240, 7%, 43%, 0.514);
         }
     }
-
     .service-svg {
         position: absolute;
         width: 100%;
-        bottom: 0;
+        bottom: -2px;
         left: 0;
     }
-
     .services-header {
         display: flex;
         align-items: center;
@@ -612,7 +488,6 @@ header {
             z-index: 10;
         }
     }
-
     .album {
         width: 60px;
         height: 60px;
@@ -644,8 +519,10 @@ header {
             height: 100%;
             object-fit: cover;
         }
+    }    
+    .service-body{
+        min-height: 76px;
     }
-
     .services-title {
         color: #c9d3e7;
         text-align: center;
@@ -668,7 +545,6 @@ header {
             margin-bottom: 5px;
         }
     }
-
     .services-footer {
         position: relative;
         width: 100%;
@@ -677,7 +553,6 @@ header {
         justify-content: center;
         margin-bottom: 7px;
     }
-
     .services-bottom {
         width: 40px;
         height: 40px;
@@ -858,11 +733,9 @@ header {
 .title {
     color: $text_main;
     text-align: center;
-    // font-family: OpenSans-Semibold;
     font-family: axiforma-Heavy;
     margin-bottom: 2em;
     letter-spacing: 1.3px;
-
     @include xsm {
         padding-top: 20px;
         font-size: 25px;
@@ -871,7 +744,6 @@ header {
 }
 
 .about {
-    // background-color: $bgc;
     width: 100%;
     min-height: auto;
     padding: 5% 0%;
@@ -879,10 +751,8 @@ header {
         color: $txt_white;
         text-align: center;
         font-family: OpenSans-Semibold;
-        // font-family: axiforma-Heavy;
         margin-bottom: 20px;
-        letter-spacing: 1.3px;
-    
+        letter-spacing: 1.3px;    
         @include xsm {
             padding-top: 20px;
             font-size: 25px;
@@ -897,15 +767,56 @@ header {
         }
     }
 }
-
+.about-main-title{
+    font-family: OpenSans-Semibold;
+    color: $txt_white;
+    margin-bottom: 20px;
+}
 .about-info {
-    font-size: 20px;
+    font-size: 16px;
     font-family: OpenSans-Semibold;
     line-height: 1.6;
     color: $txt_white;
-    // text-align: center;
     margin: 0 auto;
-    width: 90%;
+    margin-bottom: 20px;
+}
+
+.team{
+    width: 100%;
+    min-height: auto;
+    padding: 5% 0%;
+    .team-title{
+        color: $txt_white;
+        text-align: center;
+        font-family: OpenSans-Semibold;
+        margin-bottom: 4%;
+        letter-spacing: 1.3px;
+    }
+    .team-box{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        transition: all 400ms cubic-bezier(0.29, 0.9, 0.26, 1.21);
+        .team-img{
+            width: 110px;
+            height: 110px;
+            object-fit: cover;
+            border: 8px solid rgb(218, 218, 218);
+            border-style: double;
+            border-radius: 50%;
+            transition: all 400ms cubic-bezier(0.29, 0.9, 0.26, 1.21);
+            &:hover{
+                border-radius: 7px;
+                transform: scale(1.1);
+            }
+        }
+        .team-name{
+            margin-top: 10px;
+            font-family: OpenSans-Bold;
+            color: #ffffff;
+        }
+    }
 
 }
 
@@ -1144,12 +1055,10 @@ header {
 
 
 @keyframes path-anim {
-
     0%,
     100% {
         d: path("M0,256L34.3,229.3C68.6,203,137,149,206,117.3C274.3,85,343,75,411,106.7C480,139,549,213,617,234.7C685.7,256,754,224,823,202.7C891.4,181,960,171,1029,186.7C1097.1,203,1166,245,1234,256C1302.9,267,1371,245,1406,234.7L1440,224L1440,320L1405.7,320C1371.4,320,1303,320,1234,320C1165.7,320,1097,320,1029,320C960,320,891,320,823,320C754.3,320,686,320,617,320C548.6,320,480,320,411,320C342.9,320,274,320,206,320C137.1,320,69,320,34,320L0,320Z");
     }
-
     100% {
         d: path("M0,96L34.3,85.3C68.6,75,137,53,206,85.3C274.3,117,343,203,411,208C480,213,549,139,617,138.7C685.7,139,754,213,823,256C891.4,299,960,309,1029,288C1097.1,267,1166,213,1234,186.7C1302.9,160,1371,160,1406,160L1440,160L1440,320L1405.7,320C1371.4,320,1303,320,1234,320C1165.7,320,1097,320,1029,320C960,320,891,320,823,320C754.3,320,686,320,617,320C548.6,320,480,320,411,320C342.9,320,274,320,206,320C137.1,320,69,320,34,320L0,320Z");
     }
@@ -1160,50 +1069,38 @@ header {
 .explore-card {
     position: relative;
     perspective: 1000px;
-
     @include xsm {
-        // margin: 0 auto;
         width: 100%;
     }
-
     @include sm {
-        // margin: 0 auto;
         width: 100%;
     }
-
     .explore-box {
         width: 100%;
         height: 100%;
         position: relative;
         transition: transform 0.6s;
         transform-style: preserve-3d;
-        // background-color: #272A33;
         padding: 7% 1%;
-
         .explore-title {
             font-family: OpenSans-Bold;
             font-size: 18px;
             color: $text_main;
             margin-bottom: 18px;
         }
-
         .explore-subtitle {
             font-family: OpenSans-Regular;
             font-size: 12px;
             color: $txt_white;
             margin-bottom: 20px;
         }
-
         .explore-list {
             list-style: none;
             margin: 3% 0%;
             padding-left: 0px;
-
             li {
-                // padding-bottom: 10px;
                 position: relative;
                 margin-bottom: 7px;
-
                 a {
                     font-family: OpenSans-Regular;
                     font-size: 12px;
@@ -1220,35 +1117,27 @@ footer {
     width: 100%;
     height: auto;
     padding: 2% 0% 4% 0%;
-
     hr {
         border-top-color: #D8DEFA;
     }
-
     .copyright {
         color: $txt_white;
         font-size: 14px;
     }
-
     .social-media {
-        // width: 140px;
         text-align: center;
         display: flex;
         align-items: center;
         justify-content: flex-start;
-
         @include xsm {
             justify-content: flex-start;
         }
-
         li {
             margin-right: 15px;
-
             &:nth-last-child(1) {
                 margin-right: 0;
             }
         }
-
         .social-list {
             color: $txt_white;
             font-size: 16px;
@@ -1262,12 +1151,10 @@ footer {
             align-items: center;
             box-shadow: 0px 2px 8px rgba(59, 59, 59, 0.12);
             transition: all 300ms cubic-bezier(0.29, 0.9, 0.26, 1.21);
-
             @include xsm {
                 width: 34px;
                 height: 34px;
             }
-
             &:hover {
                 box-shadow: 4px 4px 10px hsla(240, 14%, 10%, 0.282),
                     -4px -4px 10px hsla(240, 14%, 10%, 0.514);

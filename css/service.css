@@ -51,11 +51,11 @@
 
 .srv-main {
   width: 100%;
-  height: 100vh;
+  min-height: 100vh;
   position: relative;
-  background: url("../images/bg5.jpg");
-  background-size: cover;
-  background-position: center;
+  background: url("../images/globe.png");
+  background-size: contain;
+  background-position: right;
   background-repeat: no-repeat;
   background-attachment: fixed;
   display: -webkit-box;
@@ -81,8 +81,9 @@
 }
 
 .srv-main .srv-container {
-  padding: 3% 10% 3% 0%;
+  padding: 3% 3% 3% 0%;
   margin-top: 4%;
+  width: 100%;
 }
 
 @media (max-width: 575.98px) {
@@ -115,12 +116,12 @@
   right: 0;
   bottom: 0;
   border-radius: 0px 8px 8px 0px;
-  background: rgba(255, 255, 255, 0.089);
-  backdrop-filter: blur(4px);
-  -o-backdrop-filter: blur(4px);
-  -ms-backdrop-filter: blur(4px);
-  -moz-backdrop-filter: blur(4px);
-  -webkit-backdrop-filter: blur(4px);
+  background: rgba(41, 41, 41, 0.842);
+  backdrop-filter: blur(9px);
+  -o-backdrop-filter: blur(9px);
+  -ms-backdrop-filter: blur(9px);
+  -moz-backdrop-filter: blur(9px);
+  -webkit-backdrop-filter: blur(9px);
   z-index: -1;
 }
 
@@ -182,9 +183,12 @@
   right: 0;
   bottom: 0;
   border-radius: 0px 8px 8px 0px;
-  background: rgba(255, 255, 255, 0.089);
-  -webkit-backdrop-filter: blur(4px);
-          backdrop-filter: blur(4px);
+  background: rgba(41, 41, 41, 0.842);
+  backdrop-filter: blur(9px);
+  -o-backdrop-filter: blur(9px);
+  -ms-backdrop-filter: blur(9px);
+  -moz-backdrop-filter: blur(9px);
+  -webkit-backdrop-filter: blur(9px);
   z-index: -1;
 }
 
@@ -196,7 +200,7 @@
 .srv-main .srv-container .srv-frm .srv-frm-title {
   font-size: 30px;
   color: #ffffff;
-  font-family: axiforma-Heavy;
+  font-family: OpenSans-ExBold;
   margin-bottom: 6px;
 }
 
@@ -216,7 +220,7 @@
 
 .srv-main .srv-container .srv-frm .srv-frm-bx .srv-frm-dsg1 {
   background-color: #FED117;
-  width: 60px;
+  width: 20px;
   border-radius: 10px;
   -webkit-box-shadow: 0px 4px 15px rgba(37, 37, 37, 0.212);
           box-shadow: 0px 4px 15px rgba(37, 37, 37, 0.212);
@@ -274,7 +278,7 @@
 }
 
 .btn, .frm-bx-btn {
-  outline: none;
+  outline: none !important;
   cursor: pointer;
   min-width: 150px;
   height: 40px;
@@ -282,6 +286,16 @@
   padding: 0px 4px;
   border-radius: 8px;
   font-size: 14px;
+}
+
+.go-back {
+  font-size: 12px;
+  color: #fecf16;
+}
+
+.go-back:hover {
+  text-decoration: none;
+  color: #feda48;
 }
 
 .frm-grp {
@@ -292,7 +306,8 @@
 
 .frm-grp-label {
   display: block;
-  color: #dadada;
+  font-family: OpenSans-Regular;
+  color: #f1f1f1;
   font-size: 12px;
   margin-bottom: 0px;
 }
@@ -301,7 +316,7 @@
   width: 100%;
   height: 32px;
   background-color: transparent;
-  color: #ffffff;
+  color: #24dbe6;
   border: 0;
   font-family: OpenSans-Semibold;
   border-bottom: 1px solid rgba(139, 139, 139, 0.753);
@@ -315,25 +330,40 @@
 }
 
 .frm-grp-inp::-webkit-input-placeholder {
-  color: rgba(124, 124, 124, 0.986);
+  color: rgba(182, 182, 182, 0.986);
+  font-size: 11px;
+  font-family: OpenSans-Light;
 }
 
 .frm-grp-inp:-ms-input-placeholder {
-  color: rgba(124, 124, 124, 0.986);
+  color: rgba(182, 182, 182, 0.986);
+  font-size: 11px;
+  font-family: OpenSans-Light;
 }
 
 .frm-grp-inp::-ms-input-placeholder {
-  color: rgba(124, 124, 124, 0.986);
+  color: rgba(182, 182, 182, 0.986);
+  font-size: 11px;
+  font-family: OpenSans-Light;
 }
 
 .frm-grp-inp::placeholder {
-  color: rgba(124, 124, 124, 0.986);
+  color: rgba(182, 182, 182, 0.986);
+  font-size: 11px;
+  font-family: OpenSans-Light;
+}
+
+.frm-grp .info-icon {
+  position: absolute;
+  right: 0;
+  bottom: 0px;
 }
 
 .frm-bx-btn {
   margin-top: 15px;
-  background-color: #6c6ef5;
-  color: white;
+  background-color: #FED117;
+  font-family: OpenSans-Semibold;
+  color: black;
   -webkit-transition: all 400ms cubic-bezier(0.29, 0.9, 0.26, 1.21);
   transition: all 400ms cubic-bezier(0.29, 0.9, 0.26, 1.21);
 }
