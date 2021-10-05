@@ -181,6 +181,12 @@ header .navbar .navbar-brand .logo {
   top: 5%;
 }
 
+@media (max-width: 575.98px) {
+  header .navbar .navbar-brand .logo {
+    width: 50px;
+  }
+}
+
 header .navbar .navbar-brand .logo-media {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -552,6 +558,7 @@ header .menu-right .menu-right-item .menu-right-link:hover {
 @media (max-width: 575.98px) {
   .home .home-content .home-subtitle {
     font-size: 25px;
+    margin-top: 40%;
   }
 }
 

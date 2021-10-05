@@ -119,6 +119,9 @@ header {
                 height: auto;
                 position: absolute;
                 top: 5%;
+                @include xsm{
+                    width: 50px;
+                }
             }
 
             .logo-media {
@@ -429,9 +432,10 @@ header {
             margin-bottom: 15px;
             transform-style: preserve-3d;
             animation: opacity 900ms 800ms linear backwards;
-
+            
             @include xsm {
                 font-size: 25px;
+                margin-top: 40%;               
             }
 
             span {
