@@ -331,6 +331,17 @@ header .menu-right .menu-right-item .menu-right-link:hover {
   color: #000000;
 }
 
+@media (max-width: 575.98px) {
+  .navbar-collapse {
+    position: absolute;
+    top: 50px;
+    right: 19px;
+    background: #2c2c3d;
+    width: 50%;
+    border-radius: 4;
+  }
+}
+
 @-webkit-keyframes menu {
   0% {
     opacity: 0;
@@ -420,6 +431,19 @@ header .menu-right .menu-right-item .menu-right-link:hover {
     height: auto;
     overflow: hidden;
   }
+}
+
+.home::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 0%;
+  background-color: #02645c;
+  -webkit-animation: open 400ms linear;
+          animation: open 400ms linear;
+  z-index: 999999;
 }
 
 .home .home-svg {
@@ -550,8 +574,40 @@ header .menu-right .menu-right-item .menu-right-link:hover {
   }
 }
 
+@-webkit-keyframes open {
+  0% {
+    opacity: 0;
+    height: 100%;
+  }
+  100% {
+    opacity: 1;
+    height: 0;
+  }
+}
+
+@keyframes open {
+  0% {
+    opacity: 0;
+    height: 100%;
+  }
+  100% {
+    opacity: 1;
+    height: 0;
+  }
+}
+
 .home-right-top {
   margin-top: 10%;
+}
+
+.home-srv-link {
+  text-decoration: none;
+  position: relative;
+  display: block;
+}
+
+.home-srv-link:hover {
+  text-decoration: none;
 }
 
 .home-services-box {
@@ -632,6 +688,7 @@ header .menu-right .menu-right-item .menu-right-link:hover {
   width: 100%;
   bottom: -2px;
   left: 0;
+  z-index: 0;
 }
 
 .home-services-box .services-header {
@@ -727,6 +784,12 @@ header .menu-right .menu-right-item .menu-right-link:hover {
 
 .home-services-box .service-body {
   min-height: 76px;
+}
+
+@media (max-width: 575.98px) {
+  .home-services-box .service-body {
+    min-height: 104px;
+  }
 }
 
 .home-services-box .services-title {
@@ -893,17 +956,6 @@ header .menu-right .menu-right-item .menu-right-link:hover {
   }
   100% {
     d: path("M0,192L30,192C60,192,120,192,180,213.3C240,235,300,277,360,293.3C420,309,480,299,540,245.3C600,192,660,96,720,80C780,64,840,128,900,170.7C960,213,1020,235,1080,245.3C1140,256,1200,256,1260,256C1320,256,1380,256,1410,256L1440,256L1440,320L1410,320C1380,320,1320,320,1260,320C1200,320,1140,320,1080,320C1020,320,960,320,900,320C840,320,780,320,720,320C660,320,600,320,540,320C480,320,420,320,360,320C300,320,240,320,180,320C120,320,60,320,30,320L0,320Z");
-  }
-}
-
-@-webkit-keyframes open {
-  0% {
-    opacity: 0;
-    height: 100%;
-  }
-  100% {
-    opacity: 1;
-    height: 0;
   }
 }
 

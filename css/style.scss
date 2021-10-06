@@ -214,6 +214,18 @@ header {
     }
 }
 
+
+.navbar-collapse{
+    @include xsm{
+        position: absolute;
+        top: 50px;
+        right: 19px;
+        background: #2c2c3d;
+        width: 50%;
+        border-radius: 4;
+    }
+}
+
 @keyframes menu {
     0% {
         opacity: 0;
@@ -246,6 +258,7 @@ header {
     }
 }
 
+
 // ===========================HOME
 .home {
     position: relative;
@@ -260,6 +273,17 @@ header {
     @include xsm {
         height: auto;
         overflow: hidden;
+    }
+    &::before {
+        content: "";
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 0%;
+        background-color: hsl(175, 97%, 20%);
+        animation: open 400ms linear;
+        z-index: 999999;
     }
     .home-svg {
         position: absolute;
@@ -377,10 +401,29 @@ header {
     }
 }
 
+@keyframes open {
+    0% {
+        opacity: 0;
+        height: 100%;
+    }
+
+    100% {
+        opacity: 1;
+        height: 0;
+    }
+}
+
 .home-right-top {
     margin-top: 10%;
 }
-
+.home-srv-link{
+    text-decoration: none;
+    position: relative;
+    display: block;
+    &:hover{
+        text-decoration: none;
+    }
+}
 .home-services-box {
     background: hsl(216, 34%, 16%);
     width: 220px;
@@ -439,6 +482,7 @@ header {
         width: 100%;
         bottom: -2px;
         left: 0;
+        z-index: 0;
     }
     .services-header {
         display: flex;
@@ -522,6 +566,9 @@ header {
     }    
     .service-body{
         min-height: 76px;
+        @include xsm{
+            min-height: 104px;
+        }
     }
     .services-title {
         color: #c9d3e7;

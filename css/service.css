@@ -82,7 +82,7 @@
 
 .srv-main .srv-container {
   padding: 3% 3% 3% 0%;
-  margin-top: 4%;
+  margin-top: 6%;
   width: 100%;
 }
 
@@ -102,6 +102,7 @@
 
 .srv-main .srv-container .srv-main-left {
   width: 100%;
+  min-height: 200px;
   padding: 20px 10px;
   position: relative;
   padding: 5%;
@@ -116,7 +117,7 @@
   right: 0;
   bottom: 0;
   border-radius: 0px 8px 8px 0px;
-  background: rgba(41, 41, 41, 0.842);
+  background: rgba(41, 41, 41, 0.95);
   backdrop-filter: blur(9px);
   -o-backdrop-filter: blur(9px);
   -ms-backdrop-filter: blur(9px);
@@ -128,43 +129,53 @@
 .srv-main .srv-container .srv-main-left .srv-main-badge {
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
-  width: 160px;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  height: 45px;
-  padding: 10px;
-  background-color: #FED117;
-  color: rgba(59, 59, 59, 0.98);
-  font-size: 14px;
+  color: #FED117;
+  font-size: 30px;
   font-family: OpenSans-Bold;
   text-transform: uppercase;
-  letter-spacing: 1.7px;
-  margin-bottom: 6%;
-  border-radius: 6px;
-  -webkit-box-shadow: 0px 4px 15px rgba(39, 39, 39, 0.26);
-          box-shadow: 0px 4px 15px rgba(39, 39, 39, 0.26);
+  line-height: 1;
+  margin-bottom: 3px;
 }
 
 .srv-main .srv-container .srv-main-left .srv-main-title {
-  font-size: 30px;
-  font-family: axiforma-Heavy;
-  color: #ffffff;
-  text-transform: uppercase;
+  font-size: 16px;
+  font-family: OpenSans-Semibold;
+  color: #cfcfcf;
   line-height: 1.4;
-  margin-bottom: 2%;
+  margin-block: 10px;
 }
 
 .srv-main .srv-container .srv-main-left .srv-main-description {
   font-size: 14px;
   color: #cfcfcf;
   font-family: OpenSans-Regular;
+}
+
+.srv-main .srv-container .srv-main-left .srv-main-list {
+  padding-left: 10px;
+  margin-left: 20px;
+  list-style: none;
+}
+
+.srv-main .srv-container .srv-main-left .srv-main-list .srv-main-list-item {
+  position: relative;
+  color: white;
+  font-size: 12px;
+  margin-bottom: 9px;
+}
+
+.srv-main .srv-container .srv-main-left .srv-main-list .srv-main-list-item::before {
+  content: "";
+  position: absolute;
+  display: inline-block;
+  left: -18px;
+  top: 3px;
+  width: 10px;
+  height: 10px;
+  background-color: #fecf16;
+  border-radius: 2px;
+  -webkit-transform: rotate(45deg);
+          transform: rotate(45deg);
 }
 
 .srv-main .srv-container .srv-frm {
