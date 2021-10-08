@@ -108,6 +108,8 @@ const Home: FC = (props) => {
                                                 <h5 className="services-title" id="title">Silver NFT Launcher</h5>
                                                 <p className="services-subtitle">MetaData</p>
                                                 <p className="services-subtitle">Minting/Listing</p>
+                                                <p className="services-subtitle">&nbsp;</p>
+                                                <p className="services-subtitle">&nbsp;</p>
                                             </div>
                                             <div className="services-footer">
                                                 <button className="services-bottom next">
@@ -136,6 +138,8 @@ const Home: FC = (props) => {
                                             <div className="service-body">
                                                 <h5 className="services-title" id="title">Bronze NFT Launcher</h5>
                                                 <p className="services-subtitle">Minting/Listing</p>
+                                                <p className="services-subtitle">&nbsp;</p>
+                                                <p className="services-subtitle">&nbsp;</p>
                                             </div>
                                             <div className="services-footer">
                                                 <button className="services-bottom next">
@@ -164,6 +168,7 @@ const Home: FC = (props) => {
                                             <div className="service-body">
                                                 <h5 className="services-title" id="title">Custom NFT Launcher</h5>
                                                 <p className="services-subtitle">Tailored NFT needs</p>
+                                                <p className="services-subtitle">&nbsp;</p>
                                             </div>
                                             <div className="services-footer">
                                                 <button className="services-bottom next">

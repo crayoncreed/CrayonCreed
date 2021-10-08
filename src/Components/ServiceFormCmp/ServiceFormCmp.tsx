@@ -3,18 +3,25 @@ import React from 'react'
 interface Props {
     formObject: any;
     formErrors: any;
+    isLoading: boolean;
     handleChange: Function;
     submit: Function;
 }
 
 const ServiceFormCmp = (props: Props) => {
+    // const { username, email, discord_id, nft_name, nft_to_mint, release_date } = props.formObject;
+    // if (username && email && discord_id && nft_name && nft_to_mint && release_date
+    //     && !props.formErrors.username && !props.formErrors.email && !props.formErrors.discord_id
+    //     && !props.formErrors.nft_name && !props.formErrors.nft_to_mint && !props.formErrors.release_date) {
+
+    // }
     return (
         <>
             <form className="srv-frm-bx" onSubmit={(e) => props.submit(e)}>
                 <div className="srv-frm-dsg1" />
                 <div className="srv-frm-dsg2">
                     <div className="row m-0">
-                        <div className="col-md-12">
+                        <div className="col-md-6">
                             <div className="frm-grp">
                                 <label className="frm-grp-label">How shall we call you <span className="text-danger">*</span></label>
                                 <input
@@ -66,6 +73,8 @@ const ServiceFormCmp = (props: Props) => {
                                 />
                                 {/* {props.formErrors?.telegram_id ? <p className="inp-errors">Invalid Telegram ID</p> : null} */}
                             </div>
+                        </div>
+                        <div className="col-md-6">
                             <div className="frm-grp">
                                 <label className="frm-grp-label">NFT Name <span className="text-danger">*</span></label>
                                 <input
@@ -84,6 +93,7 @@ const ServiceFormCmp = (props: Props) => {
                                 <input
                                     type="number"
                                     name="nft_to_mint"
+                                    min={0}
                                     onChange={(e) => props.handleChange(e)}
                                     value={props.formObject?.nft_to_mint}
                                     className={`frm-grp-inp ${props.formErrors?.nft_to_mint ? ' error' : ''}`}
@@ -114,7 +124,9 @@ const ServiceFormCmp = (props: Props) => {
                         </div>
                     </div>
                     <div className="text-center">
-                        <button type="submit" className="frm-bx-btn">Sign UP !</button>
+                        <button type="submit" className="frm-bx-btn" disabled={props.isLoading}>
+                            {!props.isLoading ? 'Sign UP !' : <span className="loader"></span>}
+                        </button>
                     </div>
                 </div>
             </form>

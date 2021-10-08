@@ -29,6 +29,7 @@ const ServiceForm = (props: Props) => {
 
     const [formObject, setFormObject] = useState<any>(initialState);
     const [formErrors, setFormErrors] = useState<any>(errorsObj);
+    const [isLoading, setIsLoading] = useState(false);
 
 
     const handleChange = (event: any) => {
@@ -70,21 +71,25 @@ const ServiceForm = (props: Props) => {
             && !formErrors.nft_name && !formErrors.nft_to_mint && !formErrors.release_date) {
             const service_name = props.title;
             const body = { ...formObject, service_name };
+            setIsLoading(true);
             Axios.post('https://crayoncreedapi.herokuapp.com/formData', body)
             .then((res: any) => {
                 const resp = res.data;
                 if (resp.Message === "Success") {
                     swal("We have captured your request. We will contact you soon...", "Thank You!", "success");
                     setFormObject(initialState);
+                    setIsLoading(false);
                 } else {
                     swal("Error Message!", '', "error");
+                    setIsLoading(false);
                 }
             }).
             catch((err: any) => {
                 swal("Error Message!", '', "error");
+                setIsLoading(false);
             })            
         } else {
-            swal("Error Message!", "Please all input fields", "error");
+            swal("Error Message!", "Please fill all input fields", "error");
         }
     }
 
@@ -103,6 +108,7 @@ const ServiceForm = (props: Props) => {
             <ServiceFormCmp
                 formObject={formObject}
                 formErrors={formErrors}
+                isLoading={isLoading}
                 handleChange={handleChange}
                 submit={submit}
             />

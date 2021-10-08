@@ -61,10 +61,10 @@ const Service = (props: any) => {
         <section className="srv-main">
             <div className="srv-container">
                 <div className="row justify-content-center">
-                    <div className="col-md-5 order-2 order-sd-1 order-md-1">
+                    <div className="col-md-8 order-2 order-sd-1 order-md-1">
                         <ServiceForm path={path} title={title} />
                     </div>
-                    <div className="col-md-4 order-sd-2 order-md-2">
+                    <div className="col-md-3 order-sd-2 order-md-2">
                         {renderServiceTag()}
                     </div>
                 </div>

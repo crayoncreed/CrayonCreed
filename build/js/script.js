@@ -6,7 +6,12 @@ $(window).on('scroll', function () {
 	}
 })
 $(document).ready(function () {
-	$('.navbar-nav>li>a:not(.dropdown-toggle)').on('click', function () {
+	$('.navbar-nav>li>a:not(.dropdown-toggle)').on('click', function (e) {
+		e.stopPropagation();
+		$('.navbar-collapse').collapse('hide');
+	});
+	$('body').on('click', function (e) {
+		// e.stopPropagation();
 		$('.navbar-collapse').collapse('hide');
 	});
 });
