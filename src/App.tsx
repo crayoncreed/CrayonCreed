@@ -1,25 +1,33 @@
-import React from 'react';
-import logo from './logo.svg';
+import React, { Suspense } from 'react';
+import { Redirect, Route, Switch } from 'react-router-dom';
+
 import './App.css';
+import Layout from './Components/Common/Layout/Layout';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <Suspense fallback={<div>Loading...</div>}>
+        <Switch>
+          {/* {routes.map((route, i) => {
+            return <Route
+              key={i}
+              path={route.path}
+              exact={route.exact}
+              // strict={route.strict}
+              render={(props: RouteComponentProps<any>) => (
+                <route.component
+                  name={route.name}
+                  {...props}
+                  {...route.props} />
+              )}
+            />
+          })} */}
+          <Route path="/" strict={true} render={props => <Layout {...props} />} />
+          <Redirect to="/404" from="*" />
+        </Switch>
+      </Suspense>
+    </>
   );
 }
 
