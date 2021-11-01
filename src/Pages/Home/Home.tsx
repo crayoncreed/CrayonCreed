@@ -1,6 +1,8 @@
 import React, { FC, useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
+import OwlCarousel from 'react-owl-carousel';
 import { RoutePaths } from '../../Constants/RoutePaths';
+import upcomingProjects from './upcomingProjects.json'
 
 const Home: FC = (props) => {
     const [scriptList, setScriptList] = useState<any>([]);
@@ -30,11 +32,37 @@ const Home: FC = (props) => {
             node.type = 'text/javascript';
             node.async = false;
             node.charset = 'utf-8';
-            node.id = 'custom'+i;
+            node.id = 'custom' + i;
             list.push(node);
             document.getElementsByTagName('head')[0].appendChild(node);
         }
         setScriptList(list);
+    }
+
+    const navText = ['<i class="fas fa-chevron-left"></i>', '<i class="fas fa-chevron-right"></i>'];
+    const responsive = {
+        0: {
+            items: 2
+        },
+        600: {
+            items: 3
+        },
+        1000: {
+            items: 4
+        }
+    }
+    const renderItems = (item: any, i: any) => {
+        return (<div className="item" key={i}>
+            <a href={item.twitterLink} className="tm-bx-link" target="_blank">
+                <div className="tm-bx">
+                    <h2 className="tm-bx-lbl">{item.id}</h2>
+                    <div className="tm-bx-in">
+                        <img src={item?.imageUrl ? item?.imageUrl : 'images/venomuk.jpg'} className="tm-bx-img" alt={item.name} />
+                        <h4 className="tm-bx-name">{item.name}</h4>
+                    </div>
+                </div>
+            </a>
+        </div>)
     }
 
     return (
@@ -46,7 +74,9 @@ const Home: FC = (props) => {
                         <div className="col-md-6">
                             <div className="home-content">
                                 <h1 className="home-subtitle">
-                                    <span>CrayonCreed</span> is the first ever End-to-End NFT Launcher Platform.
+                                    <span>CrayonCreed</span> is an
+                                    <br />
+                                    End-to-End NFT Launcher Platform.
                                 </h1>
                                 <p className="home-info">
                                     Your preferred launchpad partner for your Internet of Assets.
@@ -190,6 +220,19 @@ const Home: FC = (props) => {
                     <path fill="#0099ff" fillOpacity="0.2" d="M0,96L30,101.3C60,107,120,117,180,138.7C240,160,300,192,360,186.7C420,181,480,139,540,122.7C600,107,660,117,720,144C780,171,840,213,900,202.7C960,192,1020,128,1080,101.3C1140,75,1200,85,1260,74.7C1320,64,1380,32,1410,16L1440,0L1440,320L1410,320C1380,320,1320,320,1260,320C1200,320,1140,320,1080,320C1020,320,960,320,900,320C840,320,780,320,720,320C660,320,600,320,540,320C480,320,420,320,360,320C300,320,240,320,180,320C120,320,60,320,30,320L0,320Z">
                     </path>
                 </svg>
+            </section>
+            <section className="about" id={"projects"}>
+                <h1 className="about-title">Upcoming Projects</h1>
+                <div className="container">
+                    <div className="row align-items-center">
+                        <div className="col-md-12">
+                            <OwlCarousel className='owl-theme' center dots navText={navText} responsive={responsive} margin={10} nav>
+                                {upcomingProjects?.length >= 0 ? upcomingProjects?.map((item, i) => renderItems(item, i)) : <h4>No projects available</h4>}
+                            </OwlCarousel>
+
+                        </div>
+                    </div>
+                </div>
             </section>
             <section className="about" id={"about"}>
                 <h1 className="about-title">About Us</h1>
