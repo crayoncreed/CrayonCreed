@@ -43,7 +43,7 @@ const Header: FC = () => {
                                 <NavLink to={RoutePaths.HOME} exact className="nav-link">Home</NavLink>
                             </li>
                             <li className="nav-item">
-                                <a href="#projects" onClick={scrollAction} className="nav-link">Upcoming Projects</a>
+                                <a href="#projects" onClick={scrollAction} className="nav-link">Projects</a>
                             </li>
                             <li className="nav-item">
                                 {/* <NavLink to="/#about" onClick={navigate} className="nav-link">About Us</NavLink> */}

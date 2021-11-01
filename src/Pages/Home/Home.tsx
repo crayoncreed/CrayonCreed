@@ -222,7 +222,7 @@ const Home: FC = (props) => {
                 </svg>
             </section>
             <section className="about" id={"projects"}>
-                <h1 className="about-title">Upcoming Projects</h1>
+                <h1 className="about-title">Projects</h1>
                 <div className="container">
                     <div className="row align-items-center">
                         <div className="col-md-12">
